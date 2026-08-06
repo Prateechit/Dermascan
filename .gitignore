@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+models/*.h5
+static/uploads/*
+data/ham10000/
