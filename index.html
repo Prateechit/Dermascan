@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DermaScan — AI Skin Screening</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">DermaScan</span>
+      <span class="brand-tag">AI Skin Screening</span>
+    </div>
+    {% if demo_mode %}
+    <span class="demo-badge" title="No trained model loaded. Predictions are illustrative.">Demo mode</span>
+    {% endif %}
+  </header>
+
+  <main class="wrap">
+    <!-- Intro / hero -->
+    <section class="hero" id="upload-section">
+      <h1>Screen a skin concern in seconds</h1>
+      <p class="lede">
+        Upload or capture a photo of the affected area. DermaScan cleans the
+        image, runs a deep-learning screen, and walks you through what to do
+        next. This is an educational tool — not a medical diagnosis.
+      </p>
+
+      <div class="uploader" id="dropzone">
+        <input type="file" id="file-input" accept="image/*" hidden />
+        <input type="file" id="camera-input" accept="image/*" capture="environment" hidden />
+        <div class="uploader-inner">
+          <div class="uploader-icon" aria-hidden="true">◎</div>
+          <p class="uploader-title">Drop a photo here</p>
+          <p class="uploader-sub">or</p>
+          <div class="uploader-actions">
+            <button class="btn btn-primary" id="browse-btn">Choose file</button>
+            <button class="btn btn-ghost" id="camera-btn">Use camera</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analysis -->
+    <section class="analysis hidden" id="analysis-section">
+      <div class="scan-head">
+        <h2>Analysis result</h2>
+        <button class="btn btn-ghost btn-small" id="new-scan">New scan</button>
+      </div>
+
+      <div class="grid">
+        <!-- Left: images -->
+        <div class="card imagery">
+          <div class="img-tabs">
+            <button class="img-tab active" data-view="original">Original</button>
+            <button class="img-tab" data-view="processed">Processed</button>
+            <button class="img-tab" data-view="gradcam">Focus map</button>
+          </div>
+          <div class="img-stage">
+            <img id="stage-img" alt="Analysed skin image" />
+          </div>
+          <p class="img-caption" id="img-caption">Uploaded image.</p>
+        </div>
+
+        <!-- Right: result -->
+        <div class="card result" id="result-card">
+          <div class="result-head">
+            <span class="pill" id="severity-pill">—</span>
+            <span class="conf" id="confidence">—</span>
+          </div>
+          <h3 id="disease-name">Analysing…</h3>
+          <p id="disease-desc" class="muted"></p>
+
+          <div class="meter">
+            <div class="meter-label">Model confidence</div>
+            <div class="meter-track"><div class="meter-fill" id="meter-fill"></div></div>
+          </div>
+
+          <div class="top3" id="top3"></div>
+
+          <div class="precautions">
+            <h4>Precautions</h4>
+            <ul id="precautions"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="card chatbot" id="chatbot">
+        <h3>Quick health check</h3>
+        <p class="muted">Answer a few questions and I'll give tailored guidance.</p>
+        <div id="questionnaire" class="questionnaire"></div>
+        <button class="btn btn-primary" id="get-advice" disabled>Get guidance</button>
+        <div class="chat-reply hidden" id="chat-reply"></div>
+      </div>
+
+      <!-- Dermatologist recommendation -->
+      <div class="card derm hidden" id="derm-card">
+        <div class="derm-head">
+          <h3>Find care near you</h3>
+          <span class="pill pill-urgent hidden" id="derm-urgent">Recommended</span>
+        </div>
+        <p id="derm-message" class="muted"></p>
+        <a class="btn btn-primary" id="maps-link" target="_blank" rel="noopener">Open in Google Maps</a>
+        <details class="fallback">
+          <summary>Or see a list of clinics</summary>
+          <ul id="clinic-list"></ul>
+        </details>
+      </div>
+    </section>
+
+    <p class="disclaimer">
+      DermaScan is a student project for educational screening only. It does not
+      diagnose disease and is not a substitute for professional medical advice.
+    </p>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
