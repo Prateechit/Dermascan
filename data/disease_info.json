@@ -1,0 +1,106 @@
+{
+  "akiec": {
+    "name": "Actinic Keratosis / Intraepithelial Carcinoma",
+    "short": "Actinic Keratosis",
+    "severity": "high",
+    "malignant": true,
+    "description": "Rough, scaly patches caused by long-term sun exposure. Considered pre-cancerous and can progress to squamous cell carcinoma if untreated.",
+    "precautions": [
+      "Avoid direct sun exposure, especially between 10 AM and 4 PM.",
+      "Apply broad-spectrum SPF 30+ sunscreen daily.",
+      "Do not scratch or pick at the scaly patches.",
+      "Get the lesion examined by a dermatologist soon \u2014 it may need cryotherapy or topical treatment."
+    ]
+  },
+  "bcc": {
+    "name": "Basal Cell Carcinoma",
+    "short": "Basal Cell Carcinoma",
+    "severity": "high",
+    "malignant": true,
+    "description": "The most common form of skin cancer. It grows slowly and rarely spreads, but should be treated early to avoid local tissue damage.",
+    "precautions": [
+      "Consult a dermatologist for evaluation and biopsy as soon as possible.",
+      "Protect the area from further sun damage.",
+      "Do not attempt to treat or remove it yourself.",
+      "Monitor for bleeding, oozing, or changes in size."
+    ]
+  },
+  "bkl": {
+    "name": "Benign Keratosis-like Lesion",
+    "short": "Benign Keratosis",
+    "severity": "low",
+    "malignant": false,
+    "description": "A non-cancerous skin growth such as a seborrheic keratosis or solar lentigo. Usually harmless but can resemble more serious lesions.",
+    "precautions": [
+      "Generally harmless \u2014 no urgent treatment needed.",
+      "Keep the area clean and moisturised.",
+      "See a dermatologist if it changes colour, shape, or starts bleeding.",
+      "Avoid rubbing or irritating the lesion."
+    ]
+  },
+  "df": {
+    "name": "Dermatofibroma",
+    "short": "Dermatofibroma",
+    "severity": "low",
+    "malignant": false,
+    "description": "A common benign skin nodule, often on the legs. Firm to the touch and usually harmless.",
+    "precautions": [
+      "Usually harmless and does not require treatment.",
+      "Avoid scratching or squeezing the nodule.",
+      "See a doctor if it becomes painful or grows rapidly.",
+      "Removal is optional and mainly cosmetic."
+    ]
+  },
+  "mel": {
+    "name": "Melanoma",
+    "short": "Melanoma",
+    "severity": "critical",
+    "malignant": true,
+    "description": "The most dangerous form of skin cancer, developing from pigment-producing melanocytes. It can spread rapidly to other organs if not caught early.",
+    "precautions": [
+      "Seek immediate dermatologist consultation \u2014 a biopsy is strongly recommended.",
+      "Watch for the ABCDE signs: Asymmetry, Border irregularity, Colour variation, Diameter > 6mm, Evolving shape.",
+      "Do not delay \u2014 early detection dramatically improves outcomes.",
+      "Avoid sun exposure and use sunscreen while awaiting consultation."
+    ]
+  },
+  "nv": {
+    "name": "Melanocytic Nevus (Mole)",
+    "short": "Melanocytic Nevus",
+    "severity": "low",
+    "malignant": false,
+    "description": "A common benign mole. Most are harmless, but changes in a mole can occasionally signal melanoma.",
+    "precautions": [
+      "Usually harmless \u2014 routine monitoring is enough.",
+      "Track any change in size, colour, or shape over time.",
+      "Use sunscreen to prevent new moles and darkening.",
+      "See a dermatologist if the mole itches, bleeds, or evolves."
+    ]
+  },
+  "vasc": {
+    "name": "Vascular Lesion",
+    "short": "Vascular Lesion",
+    "severity": "low",
+    "malignant": false,
+    "description": "Includes cherry angiomas, haemangiomas, and other blood-vessel-related marks. Almost always benign.",
+    "precautions": [
+      "Typically harmless and painless.",
+      "Avoid trauma to the area to prevent bleeding.",
+      "Consult a doctor if it grows quickly or bleeds often.",
+      "Cosmetic removal is possible via laser if desired."
+    ]
+  },
+  "unknown": {
+    "name": "Uncertain / Low Confidence",
+    "short": "Uncertain",
+    "severity": "medium",
+    "malignant": false,
+    "description": "The model could not confidently classify this image. This is not a diagnosis.",
+    "precautions": [
+      "Retake the photo with better lighting and focus.",
+      "Ensure the lesion fills most of the frame.",
+      "When in doubt, always consult a qualified dermatologist.",
+      "This tool is for educational screening only, not medical diagnosis."
+    ]
+  }
+}
