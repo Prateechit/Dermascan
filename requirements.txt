@@ -3,6 +3,7 @@ gunicorn==22.0.0
 opencv-python-headless==4.10.0.84
 numpy==1.26.4
 Pillow==10.4.0
+ai-edge-litert
 # To serve the REAL trained model instead of demo mode, also add:
 #   tensorflow-cpu==2.16.1
 # and commit your trained models/skin_model.h5 to the repo.
