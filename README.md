@@ -1,9 +1,6 @@
 # DermaScan — AI-Based Skin Disease Detection & Dermatology Assistant
 
 **Live demo:** https://dermascan-194r.onrender.com
-> ⏳ Hosted on a free tier — the first visit after it's been idle takes ~50 seconds to wake up, then it's fast.
-
-> ⚠️ Educational screening tool only — **not** a medical diagnosis.
 
 DermaScan screens a skin photo with a deep-learning model trained on the HAM10000
 dataset, shows the predicted condition with a confidence score, asks a short set
